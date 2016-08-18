@@ -14,3 +14,17 @@
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::get('/tracy', function () {
+    throw new \Exception('Error');
+});
+
+// Route::get('home', function () {
+//     return view('home.index');
+// });
+
+Route::get('home',          ['as'=>'home.index','uses'=>'HomeController@index']);
+Route::get('hello/{name?}', ['as'=>'hello.index','uses'=>'HelloController@index']);
+
+Route::get('posts',       ['as'=>'posts.index','uses'=>'PostsController@index']);
+Route::get('posts/{id?}', ['as'=>'posts.show' ,'uses'=>'PostsController@show' ]);
