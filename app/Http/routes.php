@@ -16,12 +16,16 @@ Route::get('/', function () {
 });
 
 Route::get('/tracy', function () {
-    throw new \Exception('Error');
+    throw new \Exception('Tracy works!');
 });
 
 // Route::get('home', function () {
-//     return view('home.index');
+//     return view('home');
 // });
+// Route::get('home', function () {
+//     return view('home.index0');
+// });
+
 
 Route::get('home',          ['as'=>'home.index','uses'=>'HomeController@index']);
 Route::get('hello/{name?}', ['as'=>'hello.index','uses'=>'HelloController@index']);
