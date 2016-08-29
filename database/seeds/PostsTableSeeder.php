@@ -25,7 +25,7 @@ class PostsTableSeeder extends Seeder
 //                'title'=> $faker->realText(10),
 //                'content'=> $faker->realText(200),
                 'is_feature'=>rand(0,1),
-                'blog_id'=>rand(1,3),
+                'user_id'=>rand(1,3),
                 'created_at'=> Carbon::now()->subDays($total-$number),
                 'updated_at'=> Carbon::now()->subDays($total-$number)->addHours(1,24),
             ]);

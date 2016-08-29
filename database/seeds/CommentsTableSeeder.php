@@ -19,15 +19,15 @@ class CommentsTableSeeder extends Seeder
         $faker=Faker::create('zh_TW');
 
         foreach (range(1,$total) as $number){
-            foreach (range(1, rand(0,4)) as $pnum){
+            for ($i = 1; $i <= rand(0,3); $i++){
                 Comment::create([
                     //    'title'=> $faker->sentence,
                     //    'content'=> $faker->paragraph,
                     'nickname'=> $faker->realText(10),
                     'content'=> $faker->sentence,
                     'post_id'=>$number,
-                    'created_at'=> Carbon::now()->subDays($total-$number),
-                    'updated_at'=> Carbon::now()->subDays($total-$number),
+                    'created_at'=> Carbon::now()->subDays($total-$number)->addDay($i),
+                    'updated_at'=> Carbon::now()->subDays($total-$number)->addDay($i),
                 ]);
 
             }
