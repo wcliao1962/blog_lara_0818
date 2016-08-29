@@ -16,7 +16,7 @@ class PostsController extends Controller
     public function index()
     {
         //
-        return view('posts.index');
+        return view('blogs.posts.index');
     }
 
  
@@ -31,7 +31,7 @@ class PostsController extends Controller
     {
         //
         $data=['id'=> $id];
-        return view('posts.show', $data);
+        return view('blogs.posts.show', $data);
     }
 
 
