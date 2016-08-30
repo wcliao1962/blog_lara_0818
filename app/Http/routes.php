@@ -31,7 +31,7 @@ Route::get('home',          ['as'=>'home.index','uses'=>'HomeController@index'])
 Route::get('hello/{name?}', ['as'=>'hello.index','uses'=>'HelloController@index']);
 
 //Route::get('blogs',       ['as'=>'posts.index','uses'=>'BlogsController@index']);
-//Route::get('blogs/{id?}', ['as'=>'posts.show' ,'uses'=>'BlogsController@show' ]);
+Route::get('blogs/{id?}', ['as'=>'posts.show' ,'uses'=>'BlogsController@show' ]);
 
-Route::get('blogs/posts',       ['as'=>'blogs.posts.index','uses'=>'PostsController@index']);
+//Route::get('blogs/posts',       ['as'=>'blogs.posts.index','uses'=>'PostsController@index']);
 Route::get('blogs/posts/{id?}', ['as'=>'blogs.posts.show' ,'uses'=>'PostsController@show' ]);

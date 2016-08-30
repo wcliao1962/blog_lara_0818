@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\User;
 use Illuminate\Http\Request;
 
 use App\Http\Requests;
@@ -47,8 +48,22 @@ class BlogsController extends Controller
      */
     public function show($id)
     {
-        $data=['id'=> $id];
-        return view('blogs.posts.show', $data);
+        //$id: user_id
+
+
+        $user = User::find($id);
+//        echo $user->name.'<br>';
+//        echo $user->email.'<br><hr>';
+//        foreach ($user->posts as $post) {
+//            echo $post->title.'<br>';
+//        }
+
+
+        $data=['id'=> $id,
+            'author'=>$user->name,
+            'posts'=>$user->posts
+        ];
+        return view('blogs.show', $data);
 
     }
 
