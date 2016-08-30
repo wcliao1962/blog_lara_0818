@@ -16,14 +16,14 @@ class PostsTableSeeder extends Seeder
     {
         Post::truncate();
         $total=30;
-        $faker=Faker::create('en_US');
+        $faker=Faker::create('zh_TW');
 
         foreach (range(1,$total) as $number){
             Post::create([
-                'title'=> $faker->sentence,
-                'content'=> $faker->paragraph,
-//                'title'=> $faker->realText(10),
-//                'content'=> $faker->realText(200),
+//                'title'=> $faker->sentence,
+//                'content'=> $faker->paragraph,
+                'title'=> $faker->realText(20),
+                'content'=> $faker->realText(400),
                 'is_feature'=>rand(0,1),
                 'user_id'=>rand(1,5),
                 'created_at'=> Carbon::now()->subDays($total-$number),

@@ -16,10 +16,10 @@ class CommentsTableSeeder extends Seeder
     {
         Comment::truncate();
         $total=30;
-        $faker=Faker::create('en_US');
+        $faker=Faker::create('zh_TW');
 
         foreach (range(1,$total) as $number){
-            for ($i = 1; $i <= rand(0,4); $i++){
+            for ($i = 1; $i <= rand(0,5); $i++){
                 Comment::create([
                     //    'title'=> $faker->sentence,
                     //    'content'=> $faker->paragraph,

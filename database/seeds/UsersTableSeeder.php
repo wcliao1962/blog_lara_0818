@@ -16,7 +16,7 @@ class UsersTableSeeder extends Seeder
     {
         User::truncate();
         $total=5;
-        $faker=Faker::create('en_US');
+        $faker=Faker::create('zh_TW');
         foreach (range(1,$total) as $number){
             User::create(array(
                 'name'=> $faker->name,
