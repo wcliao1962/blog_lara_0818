@@ -16,7 +16,7 @@ class PostsTableSeeder extends Seeder
     {
         Post::truncate();
         $total=30;
-        $faker=Faker::create('zh_TW');
+        $faker=Faker::create('en_US');
 
         foreach (range(1,$total) as $number){
             Post::create([
@@ -25,7 +25,7 @@ class PostsTableSeeder extends Seeder
 //                'title'=> $faker->realText(10),
 //                'content'=> $faker->realText(200),
                 'is_feature'=>rand(0,1),
-                'user_id'=>rand(1,3),
+                'user_id'=>rand(1,5),
                 'created_at'=> Carbon::now()->subDays($total-$number),
                 'updated_at'=> Carbon::now()->subDays($total-$number)->addHours(1,24),
             ]);
