@@ -7,16 +7,20 @@ use Illuminate\Http\Request;
 
 use App\Http\Requests;
 
-class BlogsController extends Controller
+class AdminController extends Controller
 {
     /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index($id)
     {
-        //
+        $data=['user_id'=> $id,
+//            'author'=>$user->name,
+//            'posts'=>$user->posts
+        ];
+        return view('admin.index',$data);
     }
 
     /**
@@ -24,9 +28,13 @@ class BlogsController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function post($id)
     {
-        //
+        $data=['user_id'=> $id,
+//            'author'=>$user->name,
+//            'posts'=>$user->posts
+        ];
+        return view('admin.post',$data);
     }
 
     /**
@@ -46,26 +54,16 @@ class BlogsController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function postslist($id)
     {
-        //$id: user_id
-
-
+        //id : user_id
         $user = User::find($id);
-//        echo $user->name.'<br>';
-//        echo $user->email.'<br><hr>';
-//        foreach ($user->posts as $post) {
-//            echo $post->title.'<br>';
-//        }
 
-
-        $data=['id'=> $id,
-            'user_id'=> $id,
+        $data=['user_id'=> $id,
             'author'=>$user->name,
             'posts'=>$user->posts
         ];
-        return view('blogs.show', $data);
-
+        return view('admin.postslist',$data);
     }
 
     /**
@@ -76,7 +74,13 @@ class BlogsController extends Controller
      */
     public function edit($id)
     {
-        //
+        // id: post_id
+        $data=['post_id'=> $id,
+//            'author'=>$user->name,
+//            'posts'=>$user->posts
+        ];
+        return view('admin.edit',$data);
+
     }
 
     /**

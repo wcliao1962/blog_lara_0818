@@ -23,7 +23,7 @@
                         <a href="post.html">Sample Post</a>
                     </li>
                     <li>
-                        <a href="contact.html">Contact</a>
+                        <a href="/admin/{{$user_id}}">後臺管理</a>
                     </li>
                 </ul>
             </div>

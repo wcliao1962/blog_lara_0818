@@ -49,7 +49,8 @@ class PostsController extends Controller
             'content'=>$post->content,
             'author'=>$user->name,
             'date'=>$post->updated_at,
-            'comments'=>$post->comments
+            'comments'=>$post->comments,
+            'user_id'=>$post->user_id
         ];
         return view('blogs.posts.show', $data);
     }

@@ -35,3 +35,8 @@ Route::get('blogs/{id?}', ['as'=>'posts.show' ,'uses'=>'BlogsController@show' ])
 
 //Route::get('blogs/posts',       ['as'=>'blogs.posts.index','uses'=>'PostsController@index']);
 Route::get('blogs/posts/{id?}', ['as'=>'blogs.posts.show' ,'uses'=>'PostsController@show' ]);
+
+Route::get('admin/{id}',            ['as'=>'admin.index',     'uses'=>'AdminController@index']);
+Route::get('admin/postslist/{id}',  ['as'=>'admin.postslist' ,'uses'=>'AdminController@postslist' ]);
+Route::get('admin/edit/{id}',       ['as'=>'admin.edit' ,     'uses'=>'AdminController@edit' ]);
+Route::get('admin/post/{id}',       ['as'=>'admin.post' ,     'uses'=>'AdminController@post' ]);
