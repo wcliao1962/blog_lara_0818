@@ -96,6 +96,10 @@
             <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-user"></i> {{$author}} <b class="caret"></b></a>
             <ul class="dropdown-menu">
                 <li>
+                    <a href="/blogs/{{$user_id}}"><i class="fa fa-fw fa-folder"></i> My Blog</a>
+                </li>
+
+                <li>
                     <a href="#"><i class="fa fa-fw fa-user"></i> Profile</a>
                 </li>
                 <li>
@@ -121,10 +125,10 @@
                 <a href="charts.html"><i class="fa fa-fw fa-bar-chart-o"></i> Charts</a>
             </li>
             <li>
-                <a href="postslist/{{$user_id}}"><i class="fa fa-fw fa-table"></i> 文章列表</a>
+                <a href="/admin/postslist/{{$user_id}}"><i class="fa fa-fw fa-table"></i> 文章列表</a>
             </li>
             <li>
-                <a href="post/{{$user_id}}"><i class="fa fa-fw fa-edit"></i> 發表文章</a>
+                <a href="/admin/post/{{$user_id}}"><i class="fa fa-fw fa-edit"></i> 發表文章</a>
             </li>
             <li>
                 <a href="bootstrap-elements.html"><i class="fa fa-fw fa-desktop"></i> Bootstrap Elements</a>
