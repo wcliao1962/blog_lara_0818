@@ -11,13 +11,13 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
-
-Route::get('/tracy', function () {
-    throw new \Exception('Tracy works!');
-});
+//Route::get('/', function () {
+//    return view('welcome');
+//});
+//
+//Route::get('/tracy', function () {
+//    throw new \Exception('Tracy works!');
+//});
 
 // Route::get('home', function () {
 //     return view('home');
@@ -26,17 +26,17 @@ Route::get('/tracy', function () {
 //     return view('home.index0');
 // });
 
-
-Route::get('home',          ['as'=>'home.index','uses'=>'HomeController@index']);
-Route::get('hello/{name?}', ['as'=>'hello.index','uses'=>'HelloController@index']);
+//
+//Route::get('home',          ['as'=>'home.index','uses'=>'HomeController@index']);
+//Route::get('hello/{name?}', ['as'=>'hello.index','uses'=>'HelloController@index']);
 
 //Route::get('blogs',       ['as'=>'posts.index','uses'=>'BlogsController@index']);
-Route::get('blogs/{id?}', ['as'=>'posts.show' ,'uses'=>'BlogsController@show' ]);
 
 //Route::get('blogs/posts',       ['as'=>'blogs.posts.index','uses'=>'PostsController@index']);
-Route::get('blogs/posts/{id?}', ['as'=>'blogs.posts.show' ,'uses'=>'PostsController@show' ]);
+Route::get('blogs/posts/{pid?}', ['as'=>'blogs.posts.show' ,'uses'=>'PostsController@show' ]);
+Route::get('blogs/{uid?}', ['as'=>'posts.show' ,'uses'=>'BlogsController@show' ]);
 
-Route::get('admin/{id}',            ['as'=>'admin.index',     'uses'=>'AdminController@index']);
-Route::get('admin/postslist/{id}',  ['as'=>'admin.postslist' ,'uses'=>'AdminController@postslist' ]);
-Route::get('admin/edit/{id}',       ['as'=>'admin.edit' ,     'uses'=>'AdminController@edit' ]);
-Route::get('admin/post/{id}',       ['as'=>'admin.post' ,     'uses'=>'AdminController@post' ]);
+Route::get('admin/postslist/{uid}',  ['as'=>'admin.postslist' ,'uses'=>'AdminController@postslist' ]);
+Route::get('admin/edit/{pid}',       ['as'=>'admin.edit' ,     'uses'=>'AdminController@edit' ]);
+Route::get('admin/post/{uid}',       ['as'=>'admin.post' ,     'uses'=>'AdminController@post' ]);
+Route::get('admin/{uid}',            ['as'=>'admin.index',     'uses'=>'AdminController@index']);
